@@ -6,6 +6,7 @@ const SearchBar = (props) => {
         <div>
         <input
             type="text"
+            data-cy="search-input"
             placeholder="Search"
             onChange={(event) => props.filterSongs(event)}
         />

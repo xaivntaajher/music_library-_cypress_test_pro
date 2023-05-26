@@ -39,7 +39,7 @@ const MusicTable = (props) => {
   if (props.songs !== [])
     return (
       <div>
-        <table className="center">
+        <table className="center" data-cy="song-table">
           <thead>
             <tr>
               <th>Title</th>
