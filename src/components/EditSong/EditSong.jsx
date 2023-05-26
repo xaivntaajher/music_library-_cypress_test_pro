@@ -42,8 +42,8 @@ const EditSong = ({ handleClose, show, props }) => {
                 <label>Release Date</label>
                 <input type="date" name="release_date" onChange={(e)=>setRelease(e.target.value)} defaultValue={props.release_date}/>
                 <label>Running Time</label>
-                <input name="running_time" onChange={(e)=>setRunningTime(e.target.value)} defaultValue={props.running_time} />
-                <button type="submit">Update Song</button>
+                <input name="running_time" data-cy="ed-running-time" onChange={(e)=>setRunningTime(e.target.value)} defaultValue={props.running_time} />
+                <button type="submit" data-cy="update-song">Update Song</button>
             </form>
         <button type="button" onClick={handleClose}>
           Close

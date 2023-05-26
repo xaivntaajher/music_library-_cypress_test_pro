@@ -42,3 +42,16 @@ describe('Test New Song', () => {
     cy.get('table[data-cy="song-table"]').contains('tr','XYZ').contains('Delete Song').click();
   });
 });
+
+describe('Edit Test', () => {
+  it('Edit song and update', () => {
+    cy.visit('http://localhost:3000/')
+    // edit existing song from list
+    
+    cy.get('table[data-cy="song-table"]').contains('tr','ABC').contains('Edit Song').click();
+    cy.get('input[data-cy="ed-running-time"]').clear().type('60');
+    cy.get('button[data-cy="update-song"]').click();
+
+    cy.contains('1.00').should('exist')
+  });
+});
