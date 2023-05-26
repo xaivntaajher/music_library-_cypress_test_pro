@@ -11,10 +11,32 @@ describe('Test New Song', () => {
     cy.get('button[data-cy="add-btn"]').click()
     cy.wait(1000);   
     cy.get('input[data-cy="search-input"]').type('XYZ')
-     cy.wait(1000);   
+    cy.wait(1000);   
     // check if new song has been added/assert that it exist in songlist
     cy.get('table[data-cy="song-table"]').contains('XYZ').should('exist');
     cy.wait(1000);  
+    // delete new song from list
+    
+    cy.contains('XYZ').should('exist')
+  });
+});
+
+describe('Search/filter Test', () => {
+  it('Search for new song', () => {
+    cy.visit('http://localhost:3000/')
+
+    cy.get('input[data-cy="search-input"]').type('XYZ')
+    cy.wait(1000);   
+    // check if new song has been added/assert that it exist in songlist
+    cy.get('table[data-cy="song-table"]').contains('XYZ').should('exist');
+    cy.wait(1000);  
+  
+  });
+});
+
+describe('Test New Song', () => {
+  it('Add new song and submit', () => {
+    cy.visit('http://localhost:3000/')
     // delete new song from list
     
     cy.get('table[data-cy="song-table"]').contains('tr','XYZ').contains('Delete Song').click();
