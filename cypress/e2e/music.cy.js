@@ -13,10 +13,10 @@ describe('Test New Song', () => {
     cy.get('input[data-cy="search-input"]').type('XYZ')
      cy.wait(1000);   
     // check if new song has been added/assert that it exist in songlist
-    cy.get('tr[data-cy="song-table"]').contains('XYZ').should('exist');
+    cy.get('table[data-cy="song-table"]').contains('XYZ').should('exist');
     cy.wait(1000);  
     // delete new song from list
     
-    cy.get('tr[data-cy="song-table"]').contains('XYZ').contains('Delete').click();
+    cy.get('table[data-cy="song-table"]').contains('tr','XYZ').contains('Delete Song').click();
   });
 });
